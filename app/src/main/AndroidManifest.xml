@@ -28,7 +28,8 @@
             android:label="@string/title_activity_seleccion_mant"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddAlumno" />
-        <activity android:name=".AddProfesor"></activity>
+        <activity android:name=".AddProfesor" />
+        <activity android:name=".AddCurso"></activity>
     </application>
 
 </manifest>
