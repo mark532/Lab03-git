@@ -29,7 +29,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddAlumno" />
         <activity android:name=".AddProfesor" />
-        <activity android:name=".AddCurso"></activity>
+        <activity android:name=".AddCurso" />
+        <activity android:name=".Carrera"></activity>
     </application>
 
 </manifest>
