@@ -1,5 +1,6 @@
 package com.example.marko.lab03;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,7 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class SeleccionMant extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, addFragmant.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +81,12 @@ public class SeleccionMant extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        addFragmant frg = null;
+        Boolean selectFragment = false;
+
         if (id == R.id.nav_add) {
-            // Handle the camera action
+           frg = new addFragmant();
+           getSupportFragmentManager().beginTransaction().replace(R.id.Contenedor,frg).commit();
         } else if (id == R.id.nav_Mod) {
 
         } else if (id == R.id.nav_list) {
@@ -94,8 +99,19 @@ public class SeleccionMant extends AppCompatActivity
 
         }
 
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

@@ -29,6 +29,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -148,7 +149,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         if (mAuthTask != null) {
             return;
         }
-
+/*
         // Reset errors.
         mEmailView.setError(null);
         mPasswordView.setError(null);
@@ -188,8 +189,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
+        }*/
+        if(mEmailView.getText().toString().equals("x1")){
+            if(mPasswordView.getText().toString().equals("x1")){
+                startActivity(new Intent(this, SeleccionMant.class));
+            }else{
+                Toast.makeText(getApplicationContext(),"invalid Password",Toast.LENGTH_SHORT).show();
+            }
+        }else{
+            Toast.makeText(getApplicationContext(),"Invalid User",Toast.LENGTH_SHORT).show();
         }
-        startActivity(new Intent(this, AddAlumno.class));
+
     }
 
     private boolean isEmailValid(String email) {

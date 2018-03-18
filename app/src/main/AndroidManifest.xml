@@ -30,7 +30,7 @@
         <activity android:name=".AddAlumno" />
         <activity android:name=".AddProfesor" />
         <activity android:name=".AddCurso" />
-        <activity android:name=".Carrera"></activity>
+        <activity android:name=".addCarrera"></activity>
     </application>
 
 </manifest>
